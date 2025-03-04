@@ -18,7 +18,6 @@ coverage/
 # Misc
 .DS_Store
 *.log
-*.lock
 .vscode/
 .idea/
 *.swp

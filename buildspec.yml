@@ -5,13 +5,19 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
+      - echo Installing dependencies...
       - yarn install
   build:
     commands:
+      - echo Building the React app...
       - yarn build
   post_build:
     commands:
+      - echo Deploying to S3...
       - aws s3 sync build/ s3://slp1.project-andy.com --delete
+      - echo Creating CloudFront invalidation...
+      - aws cloudfront create-invalidation --distribution-id E3PUBM4UEVGN5H --paths "/*"
+
 
 artifacts:
   files:

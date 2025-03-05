@@ -25,7 +25,7 @@ const QuestionForm = ({ imageUrl }) => {
 
   return (
     <div>
-      <h2>Ask a Question</h2>
+      <h2>Please Ask A Question</h2>
       <textarea
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
